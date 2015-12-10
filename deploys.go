@@ -40,7 +40,6 @@ type Deploys []struct {
 
 func DeployResults(server string, user string, pass string) (deploys Deploys) {
 	url := "https://" + user + ":" + pass + "@" + server
-	//url += "/builds/rest/api/latest/deploy/dashboard/" + projectid
 	url += "/builds/rest/api/latest/deploy/dashboard/"
 	req, err := http.NewRequest("GET", url, bytes.NewBufferString(""))
 	if err != nil {
